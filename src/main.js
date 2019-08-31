@@ -23,7 +23,7 @@ firebase.initializeApp(firebaseConfig);
 
 export const db = firebase.firestore();
 
-firebase.auth().onAuthStateChanged(function () {
+firebase.auth().onAuthStateChanged(function() {
   if (!app) {
     // User is signed in.
     app = new Vue({

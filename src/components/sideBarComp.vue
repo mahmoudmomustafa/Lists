@@ -11,9 +11,7 @@
           <div class="row" v-if="lists == ''">
             <div class="col">
               <p class="font-weight-bold text-center" style="color: #5b6f82;">
-                No
-                Lists
-                yet
+                No Lists yet
               </p>
             </div>
           </div>
@@ -22,10 +20,12 @@
             <div v-for="list in lists" :key="list.id">
               <div
                 class="row addTask mb-2"
-                :class="[list.data().completed? 'completed':'incompleted']"
+                :class="[list.data().completed ? 'completed' : 'incompleted']"
               >
                 <div class="col">
-                  <router-link :to="{ name: 'show', params: { list: list.id }}">
+                  <router-link
+                    :to="{ name: 'show', params: { list: list.id } }"
+                  >
                     <a class="float-left font-weight-bold" :data-id="list.id">
                       <p v-text="list.data().title"></p>
                     </a>

@@ -8,7 +8,9 @@
             <div class="col-lg-6 mx-4">
               <!-- edit list -->
               <div class="card mt-2">
-                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">Edit List</h4>
+                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">
+                  Edit List
+                </h4>
                 <div class="card-body">
                   <!-- form  -->
                   <form @submit.prevent="updt">
@@ -31,10 +33,16 @@
                         v-model="info"
                         id="info"
                         rows="3"
-                      >info</textarea>
+                      >
+info</textarea
+                      >
                     </div>
                     <div class="change">
-                      <form @click.prevent="completed? completed=false : completed=true">
+                      <form
+                        @click.prevent="
+                          completed ? (completed = false) : (completed = true)
+                        "
+                      >
                         <div
                           class="form-check2"
                           data-toggle="tooltip"
@@ -54,9 +62,18 @@
                       </form>
                     </div>
                     <!-- error -->
-                    <span class="invalid-feedback py-2" role="alert"></span>
+                    <div v-if="errors !== ''">
+                      <span
+                        class="text-danger"
+                        v-for="err in errors"
+                        :key="err"
+                        v-text="err"
+                      ></span>
+                    </div>
                     <div class="form-group">
-                      <button class="w-100 btn btn-primary position-static">Confirm</button>
+                      <button class="w-100 btn btn-primary position-static">
+                        Confirm
+                      </button>
                     </div>
                   </form>
                 </div>
@@ -119,7 +136,11 @@ export default {
           .doc(firebase.auth().currentUser.uid)
           .collection("lists")
           .doc(this.id)
-          .update({title: this.title, info: this.info, completed: this.completed})
+          .update({
+            title: this.title,
+            info: this.info,
+            completed: this.completed
+          })
           .then(list => {
             this.$router.push("/home");
           })
@@ -131,5 +152,4 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

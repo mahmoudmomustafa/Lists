@@ -2,7 +2,12 @@
   <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark shadow">
     <div class="container">
       <router-link to="/home">
-        <a class="navbar-brand" style="color:white">ToDist<i class="fas fa-feather-alt fa-sm pl-2" style="color:white"></i></a>
+        <a class="navbar-brand" style="color:white"
+          >ToDist<i
+            class="fas fa-feather-alt fa-sm pl-2"
+            style="color:white"
+          ></i
+        ></a>
       </router-link>
       <button
         class="navbar-toggler"

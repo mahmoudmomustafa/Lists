@@ -6,7 +6,9 @@
     <!-- login form -->
     <form class="log-in shadow-lg m-auto rounded" @submit.prevent="login">
       <div class="p-5">
-        <h3 class="font-weight-bold text-primary mb-5 p-2">Login in to Your Account Now..</h3>
+        <h3 class="font-weight-bold text-primary mb-5 p-2">
+          Login in to Your Account Now..
+        </h3>
         <!-- Mail -->
         <div class="form-group mb-4 row">
           <div class="col">
@@ -44,12 +46,18 @@
                 class="form-control"
                 id="password"
                 v-model="password"
-                placeholder="Password" autocomplete="off"
+                placeholder="Password"
+                autocomplete="off"
               />
             </div>
           </div>
         </div>
-        <span class="text-danger" v-for="err in errors" :key="err" v-text="err"></span>
+        <span
+          class="text-danger"
+          v-for="err in errors"
+          :key="err"
+          v-text="err"
+        ></span>
         <!-- Remember me -->
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="rememberUser" />

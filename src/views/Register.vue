@@ -5,7 +5,9 @@
     <!-- login form -->
     <form class="log-in shadow-lg m-auto rounded" @submit.prevent="register">
       <div class="p-5">
-        <h3 class="font-weight-bold text-primary mb-5 p-2">Create your account now..</h3>
+        <h3 class="font-weight-bold text-primary mb-5 p-2">
+          Create your account now..
+        </h3>
         <div class="form-group mb-4 row">
           <div class="col">
             <div class="input-group">
@@ -63,12 +65,18 @@
                 class="form-control"
                 id="password"
                 v-model="password"
-                placeholder="Password" autocomplete="off"
+                placeholder="Password"
+                autocomplete="off"
               />
             </div>
           </div>
         </div>
-        <span class="text-danger" v-for="err in errors" :key="err" v-text="err"></span>
+        <span
+          class="text-danger"
+          v-for="err in errors"
+          :key="err"
+          v-text="err"
+        ></span>
         <!-- submit btn -->
         <div id="subHold" class="mb-2">
           <button class="btn btn-primary m-auto w-100">

@@ -8,14 +8,20 @@
             <div class="col-lg-6 mx-4">
               <!-- {{-- show task --}} -->
               <div class="card mt-2">
-                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">Title..</h4>
+                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">
+                  Title..
+                </h4>
                 <p class="px-5" v-text="title"></p>
                 <div class="card-body">
-                  <h5 class="p-2 font-weight-bold" style="color: #5E52F6">Info..</h5>
+                  <h5 class="p-2 font-weight-bold" style="color: #5E52F6">
+                    Info..
+                  </h5>
                   <p class="p-4" v-text="info"></p>
                   <div class="change">
                     <div class="edit">
-                      <router-link :to="{ name: 'edit', params: { edit: this.id }}">
+                      <router-link
+                        :to="{ name: 'edit', params: { edit: this.id } }"
+                      >
                         <a>
                           <button class="btn btn-success">edit</button>
                         </a>
@@ -69,16 +75,16 @@ export default {
       this.id = this.$route.params.list;
       this.title = "";
       this.info = "";
-        firebase
-          .firestore()
-          .collection("users")
-          .doc(firebase.auth().currentUser.uid)
-          .collection("lists")
-          .doc(this.$route.params.list)
-          .onSnapshot(doc => {
-            this.title = doc.data().title;
-            this.info = doc.data().info;
-          });
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(firebase.auth().currentUser.uid)
+        .collection("lists")
+        .doc(this.$route.params.list)
+        .onSnapshot(doc => {
+          this.title = doc.data().title;
+          this.info = doc.data().info;
+        });
     },
     del() {
       firebase

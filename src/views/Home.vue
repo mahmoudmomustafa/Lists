@@ -15,11 +15,20 @@
                   <h3
                     class="p-4 font-weight-bold float-left"
                     style="color: #5E52F6"
-                  >Make Your Own Lists</h3>
+                  >
+                    Make Your Own Lists
+                  </h3>
                   <router-link to="/add">
-                    <button class="btn btn-success">Add New List <i class="fas fa-plus pl-2"></i></button>
+                    <button class="btn btn-success">
+                      Add New List <i class="fas fa-plus pl-2"></i>
+                    </button>
                   </router-link>
-                  <img class="float-right" src="../assets/clip-list-is-empty.svg" height="325" style="width:90%"/>
+                  <img
+                    class="float-right"
+                    src="../assets/clip-list-is-empty.svg"
+                    height="325"
+                    style="width:90%"
+                  />
                 </div>
               </div>
             </div>

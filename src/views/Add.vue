@@ -7,13 +7,20 @@
           <div class="row justify-content-center show-task">
             <div class="col-lg-6 mx-4">
               <div class="card mt-2">
-                <h4 class="p-4 font-weight-bold" style="color: #5E52F6"><i class="fas fa-plus fa-xs pr-2"></i>Add List..</h4>
+                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">
+                  <i class="fas fa-plus fa-xs pr-2"></i>Add List..
+                </h4>
                 <!-- {{-- card body --}} -->
                 <div class="card-body">
                   <!-- {{-- form --}} -->
                   <form @submit.prevent="addList">
                     <div class="form-group">
-                      <label for="title" class="font-weight-bold" style="color: #5b6f82;">Title..</label>
+                      <label
+                        for="title"
+                        class="font-weight-bold"
+                        style="color: #5b6f82;"
+                        >Title..</label
+                      >
                       <input
                         class="form-control"
                         type="text"
@@ -23,7 +30,12 @@
                       />
                     </div>
                     <div class="form-group">
-                      <label class="font-weight-bold" style="color: #5b6f82;" for="info">Info..</label>
+                      <label
+                        class="font-weight-bold"
+                        style="color: #5b6f82;"
+                        for="info"
+                        >Info..</label
+                      >
                       <textarea
                         placeholder="List Info"
                         class="form-control"
@@ -34,10 +46,17 @@
                     </div>
                     <!-- error -->
                     <div v-if="errors !== ''">
-                      <span class="text-danger" v-for="err in errors" :key="err" v-text="err"></span>
+                      <span
+                        class="text-danger"
+                        v-for="err in errors"
+                        :key="err"
+                        v-text="err"
+                      ></span>
                     </div>
                     <div class="form-group">
-                      <button class="w-100 btn btn-primary position-static">Add</button>
+                      <button class="w-100 btn btn-primary position-static">
+                        Add
+                      </button>
                     </div>
                   </form>
                 </div>
@@ -73,7 +92,7 @@ export default {
   methods: {
     addList() {
       if (this.info == "" || this.title == "") {
-        this.errors=[]
+        this.errors = [];
         this.errors.push("Please fill the fields");
       } else {
         firebase
@@ -85,7 +104,7 @@ export default {
           .then(() => {
             this.info = "";
             this.title = "";
-            this.errors=[]
+            this.errors = [];
           })
           .catch(error => {
             this.errors.push(error.message);

@@ -15,11 +15,11 @@ const router = new Router({
   routes: [
     {
       path: "*",
-      redirect: "/login",
+      redirect: "/login"
     },
     {
       path: "/",
-      redirect: "/login",
+      redirect: "/login"
     },
     {
       path: "/login",
@@ -54,16 +54,16 @@ const router = new Router({
       name: "edit",
       component: Edit,
       meta: { requiresAuth: true }
-    },
+    }
   ]
 });
 router.beforeEach((to, from, next) => {
-  const currentUser=firebase.auth().currentUser;
+  const currentUser = firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
-  if(!currentUser && requiresAuth) next('login');
-  else if (currentUser && !requiresAuth) next('home');
+  if (!currentUser && requiresAuth) next("login");
+  else if (currentUser && !requiresAuth) next("home");
   else next();
-})
+});
 
 export default router;
